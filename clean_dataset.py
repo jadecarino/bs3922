@@ -1,7 +1,8 @@
 import pandas as pd
 
-year = 2023
-convertedcomp_variable_name = "ConvertedCompYearly"
+year = 2019
+# If datasets for 2019/2020 the variable is called ConvertedComp, else, ConvertedCompYearly
+convertedcomp_variable_name = "ConvertedComp"
 
 df = pd.read_csv("datasets/filtered/filtered_dataset_" + str(year) + ".csv")
 df.describe()
@@ -19,7 +20,7 @@ z_scores = zscore(df[convertedcomp_variable_name])
 print("The Z Scores:")
 print(str(z_scores))
 
-# Set the threshold for the Z Score to be 0.5
+# Set the threshold for the Z Score to 0.5
 threshold = 0.5
 
 # Remove all rows in the data frame if the Z Score is not in threshold
